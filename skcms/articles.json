@@ -1,0 +1,29 @@
+[
+{
+    "fields": {
+        "content": "1 - 4 dni - 100 PLN\n\n5 - 14 dni - 90 PLN\n\n15 - 31 dni - 80 PLN\n\n* klimatyzacja\n\n* benzyna",
+        "published": "2015-06-08T18:00:00Z",
+        "title": "VW Up"
+    },
+    "model": "articles.article",
+    "pk": 1
+},
+{
+    "fields": {
+        "content": "1 - 4 dni - 110 PLN\n\n5 - 14 dni - 100 PLN\n\n15 - 31 dni - 90 PLN\n\n* klimatyzacja\n\n* benzyna",
+        "published": "2015-06-07T18:01:00Z",
+        "title": "Renault Clio"
+    },
+    "model": "articles.article",
+    "pk": 2
+},
+{
+    "fields": {
+        "content": "1 - 4 dni - 150 PLN\n\n5 - 14 dni - 140 PLN\n\n15 - 31 dni - 130 PLN\n\n* klimatyzacja\n\n* benzyna",
+        "published": "2015-06-09T00:01:00Z",
+        "title": "Ford Focus"
+    },
+    "model": "articles.article",
+    "pk": 3
+}
+]

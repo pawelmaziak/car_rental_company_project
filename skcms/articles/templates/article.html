@@ -1,0 +1,167 @@
+{% extends "main.html" %}
+
+{% block article %}
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl">
+
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+
+    <title>Rezerwacja</title>
+
+    <script type="text/javascript">
+
+    function przetwarzaj_dane ()
+
+    {
+
+      var brakuje_danych=false;
+
+      var formularz=document.forms[0];
+
+      var napis="";
+
+      if (formularz.imie.value == ""){
+
+        napis += "imię\n"
+
+        brakuje_danych=true;
+
+      }
+
+      if (formularz.nazwisko.value == ""){
+
+        napis += "nazwisko\n"
+
+        brakuje_danych=true;
+
+      }
+
+
+      if (formularz.tel.value == ""){
+
+        napis += "telefon\n"
+
+        brakuje_danych=true;
+
+      }
+
+      if (!brakuje_danych)
+
+        formularz.submit();
+
+      else
+
+        alert ("Nie wypełniłeś następujących pól:\n" + napis);
+
+    }
+
+    </script>
+
+  </head>
+
+  <body>
+
+   
+
+    <form name="formularz1"
+
+          action="index.php"
+
+          method="get">
+
+    <div>
+
+    Proszę uzupełnić dane:
+
+    <br />
+
+    <i>(Pola oznaczone * muszą zostać wypełnione)</i>
+
+    <br /><br />
+
+    </div>
+
+    <table>
+
+        <p><input onfocus="clearArea(this);" name="data1" value="Data wynajmu (dd/mm/yy)" title="Data wynajmu (dd/mm/yy)"></p>
+        <p><input onfocus="clearArea(this);" name="data2" value="Data zwrotu (dd/mm/yy)" title="Data zwrotu (dd/mm/yy)"></p>
+        <select name="auto">
+           <p> <option selected="selected" value="wybierz samochód">Model auta</option>
+            <option value="VW Up">VW Up</option>
+              <option value="Renault Twing II">Renault Twingo II</option>
+              <option value="Renault Clio IV">Renault Clio IV</option>
+           <option value="Peugeot 301">Peugeot 301</option>
+           <option value="Ford Focus II">Ford Focus II</option>
+              <option value="Ford Focus III">Ford Focus III</option>
+           <option value="Renault Megane">Renault Megane</option>
+                <option value="Ford Focus III Kombi">Ford Focus III Kombi</option>
+            <option value="Ford Mondeo IV">Ford Mondeo IV</option>
+           <option value="Ford Mondeo IV Kombi">Ford Mondeo IV Kombi</option>
+           <option value="Dacia Lodgy">Dacia Lodgy</option>
+           <option value="Renault Traffic LONG">Renault Traffic LONG</option>
+           <option value="Dacia Dokker">Dacia Dokker</option>
+            <option value="Iveco Daily">Iveco Daily</option>
+           <option value="Citroen Jumper">Citroen Jumper</option>
+           <option value="Fiat Ducato">Fiat Ducato</option>
+           <option value="Renault Master">Renault Master</option>
+           <option value="Renault Master Kontener">Renault Master Kontener</option></p>
+        </select>
+
+      <br /><br />
+  
+    <tr>
+
+    <td>imię:</td>
+
+    <td><input type="text" name="imie">*</td>
+
+    </tr>
+
+    <tr>
+
+      <td>nazwisko:</td>
+
+      <td><input type="text" name="nazwisko">*</td>
+
+    </tr>
+
+    <tr>
+
+      <td>tel./ E-mail:</td>
+
+      <td><input type="text" name="tel">*</td>
+
+    </tr>
+
+    <tr>
+
+    <td></td>
+
+    <td align="center">
+
+      <input type="button" name="Zamów"
+
+      value="   Zamów   " onClick="przetwarzaj_dane()">
+
+    </td>
+
+  
+
+    </tr>
+
+    </table>
+
+    </form>
+
+  </body>
+
+</html>
+
+{% endblock %}
